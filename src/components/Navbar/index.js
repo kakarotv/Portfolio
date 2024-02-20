@@ -1,20 +1,21 @@
 import React from 'react'
 import styled from 'styled-components';
 import { Link as LinkR } from 'react-router-dom';
-import { DiCssdeck } from 'react-icons/di';
+import { SiBathasu } from "react-icons/si";
 
 const Nav = styled.div`
 background-color: ${({theme})=> theme.card_light};
-height:80px;
+height: 80px;
 display: flex;
 justify-content: center;
 align-items: center;
 font-size: 1rem;
 position: sticky;
-top:0;
-z-index:10;
-@media screen and (max-width: 960px){
-    transition:0.8s all ease;
+z-index: 10;
+@media screen and (max-width: 1080px) {
+    top: 0;
+    width: 100%;
+    transition: 2s all ease;
 }
 `;
 
@@ -36,7 +37,7 @@ const NavLogo = styled(LinkR)`
     cursor: pointer;
     text-decoration: none;
     align-items: center;
-    @media screen and (mac-width: 640px){
+    @media screen and (max-width: 640px){
         padding: 0 0px;
     }
 `;
@@ -130,7 +131,7 @@ const Navbar = () =>{
         <NavContainer>
             <NavLogo to='/'>
                 <a style={{ display: "flex", alignItems: "center", color: "white", marginBottom: '20;', cursor: 'pointer' }}>
-                <DiCssdeck size="3rem" /> <Span>Portfolio</Span>
+                <SiBathasu size="1.5rem" /> <Span>Portfolio</Span>
                 </a>
             </NavLogo>
             <MobileIcon></MobileIcon>
