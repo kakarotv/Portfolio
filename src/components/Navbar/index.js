@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components';
 import { Link as LinkR } from 'react-router-dom';
 import { SiBathasu } from "react-icons/si";
+import { FaBars } from "react-icons/fa";
 
 const Nav = styled.div`
 background-color: ${({theme})=> theme.card_light};
@@ -110,7 +111,7 @@ const GitHubButton = styled.a`
   font-weight: 500;
   text-decoration: none;
   font-size: 16px;
-  transition: all 0.6s ease-in-out;
+  transition: all 0.4s ease-in-out;
     :hover {
       background: ${({ theme }) => theme.primary};
       color: ${({ theme }) => theme.white};     
@@ -126,7 +127,40 @@ const Span = styled.div`
     font-size: 18px;
 `;
 
+const MobileMenu=styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+    position: absolute;
+    top:80px;
+    right:0;
+    width: 100%;
+    padding: 12px 40px 24px 40px;
+    background: ${({ theme }) => theme.card_light + 99};
+    transition: all 0.3s ease-in-out;
+    transform: ${({ isOpen }) =>
+        isOpen ? "translateY(0)" : "translateY(-100%)"};
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    opacity: ${({ isOpen }) => (isOpen ? "100%" : "0")};
+    z-index: ${({ isOpen }) => (isOpen ? "1000" : "-1000")};
+`;
+
+const MobileMenuLinks = styled(LinkR)`
+    color: ${({theme})=> theme.text_primary};
+    font-weight: 500;
+    cursor:pointer;
+    text-decoration: none;
+    transition: all 0.2 ease-in-out;
+    &:hover{
+        color:${({theme})=> theme.primary};
+    }
+`;
+
 const Navbar = () =>{
+    const [open,setOpen] = useState(false);
+    // const theme= useTheme();
     return (<Nav>
         <NavContainer>
             <NavLogo to='/'>
@@ -134,7 +168,13 @@ const Navbar = () =>{
                 <SiBathasu size="1.5rem" /> <Span>Portfolio</Span>
                 </a>
             </NavLogo>
-            <MobileIcon></MobileIcon>
+            <MobileIcon>
+                <FaBars 
+                onClick= {() =>{
+                    setOpen(!open);
+                }}
+                />
+            </MobileIcon>
             <NavItems>
                 <NavLink href="#about">About</NavLink>
                 <NavLink href='#skills'>Skills</NavLink>
@@ -146,6 +186,55 @@ const Navbar = () =>{
                 <GitHubButton>Github Profile</GitHubButton>
             </ButtonContainer>
         </NavContainer>
+        {open && (
+                <MobileMenu open={open}>
+                    <MobileMenuLinks
+                    href="#about"
+                    onClick= {() =>{
+                        setOpen(!open);
+                    }}>
+                        About
+                    </MobileMenuLinks>
+                    <MobileMenuLinks
+                    href="#skills"
+                    onClick={()=>
+                    {setOpen(!open)
+                    }}>
+                        Skills
+                    </MobileMenuLinks>
+                    <MobileMenuLinks
+                    href="#experience"
+                    onClick={()=>
+                    {setOpen(!open)
+                    }}>
+                        Experience
+                    </MobileMenuLinks>
+                    <MobileMenuLinks
+                    href="#projects"
+                    onClick={()=>
+                    {setOpen(!open)
+                    }}>
+                        Projects
+                    </MobileMenuLinks>
+                    <MobileMenuLinks
+                    href="#education"
+                    onClick={()=>
+                    {setOpen(!open)
+                    }}>
+                        Education
+                    </MobileMenuLinks>
+                    <GitHubButton 
+                    style={{
+                        padding:"10px 16px",
+                        background: `${({ theme }) => theme.primary}`,color:"white",
+                        width:"max-content",
+                    }}
+                    href="/" target="_blank">
+            Github Profile
+          </GitHubButton>
+                </MobileMenu>
+            )
+        }
     </Nav>);
 };
 
