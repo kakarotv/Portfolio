@@ -133,19 +133,17 @@ const MobileMenu=styled.div`
     justify-content: center;
     gap: 16px;
     position: absolute;
-    top:340px;
+    top:60px;
     right:0px;
     width: 100%;
     padding: 12px 40px 24px 40px;
     background: ${({ theme }) => theme.card_light + 99};
     transition: all 0.3s ease-in-out;
-    transform: ${({ isOpen }) =>
-        isOpen ? "translateY(0)" : "translateY(-100%)"};
     border-radius: 0 0 20px 20px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-    opacity: ${({ isOpen }) => (isOpen ? "100%" : "100%")};
-    z-index: ${({ isOpen }) => (isOpen ? "1000" : "1000")};
 `;
+
+
 
 const MobileMenuLinks = styled(LinkR)`
     color: ${({theme})=> theme.text_primary};
@@ -189,7 +187,7 @@ const Navbar = () =>{
             </ButtonContainer>
         </NavContainer>
         {open && (
-                <MobileMenu open={open}>
+                <MobileMenu>
                     <MobileMenuLinks
                     href="#about"
                     onClick= {() =>{
