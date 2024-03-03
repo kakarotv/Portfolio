@@ -214,8 +214,7 @@ const Image = styled.img`
 
 const Hero = () => {
   return (
-    <div id="About">
-      <HeroContainer>
+      <HeroContainer id="About">
         <HeroBg>
           <HeroBgAnimation/>
         </HeroBg> 
@@ -245,7 +244,7 @@ const Hero = () => {
           </HeroRightContainer>
         </HeroInnerContainer>
       </HeroContainer>
-    </div>
+   
   )
 }
 
