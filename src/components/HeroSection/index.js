@@ -214,7 +214,7 @@ const Image = styled.img`
 
 const Hero = () => {
   return (
-    <div id='about'>
+    <div id="About">
       <HeroContainer>
         <HeroBg>
           <HeroBgAnimation/>
@@ -236,7 +236,7 @@ const Hero = () => {
                 </Span>
               </TextLoop>
               <SubTitle>{Bio.description}</SubTitle>
-              <ResumeButton href={Bio.resume} target="#display">
+              <ResumeButton href={Bio.resume} target="_Blank">
                 Check Resume
               </ResumeButton>
           </HeroLeftContainer>

@@ -158,8 +158,11 @@ const MobileMenuLinks = styled(LinkR)`
 
 const Navbar = () =>{
     const [open,setOpen] = useState(false);
-    console.log("Mobile Menu Open:", open);
-    // const theme= useTheme();
+    const handleMenuItemClick = (sectionId) => {
+        setOpen(false); // Close the menu when a menu item is clicked
+        // Scroll to the corresponding section
+        document.getElementById(sectionId).scrollIntoView({ behavior: "smooth" });
+    };
     return (<Nav>
         <NavContainer>
             <NavLogo to='/'>
@@ -171,57 +174,43 @@ const Navbar = () =>{
                 <FaBars 
                 onClick= {() =>{
                     setOpen(!open);
-                    console.log("Mobile Menu Toggled:", !open);
                 }}
                 />
             </MobileIcon>
             <NavItems>
-                <NavLink href="#about">About</NavLink>
-                <NavLink href='#skills'>Skills</NavLink>
-                <NavLink href='#experience'>Experience</NavLink>
-                <NavLink href='#projects'>Projects</NavLink>
-                <NavLink href='#education'>Education</NavLink>
+                <NavLink href="#About">About</NavLink>
+                <NavLink href='#Skills'>Skills</NavLink>
+                <NavLink href='#Projects'>Projects</NavLink>
+                <NavLink href='#Education'>Education</NavLink>
             </NavItems>
             <ButtonContainer>
-                <GitHubButton>Github Profile</GitHubButton>
+                <GitHubButton href="https://github.com/kakarotv" target="_blank">Github Profile</GitHubButton>
             </ButtonContainer>
         </NavContainer>
         {open && (
                 <MobileMenu>
                     <MobileMenuLinks
-                    href="#about"
-                    onClick= {() =>{
-                        setOpen(!open);
-                        console.log("Mobile Menu Closed:", !open);
-                    }}>
+                        href='#About'
+                        onClick={() => handleMenuItemClick("About")}
+                    >
                         About
                     </MobileMenuLinks>
                     <MobileMenuLinks
-                    href="#skills"
-                    onClick={()=>
-                    {setOpen(!open)
-                    }}>
+                        href="#Skills"
+                        onClick={() => handleMenuItemClick("Skills")}
+                    >
                         Skills
                     </MobileMenuLinks>
                     <MobileMenuLinks
-                    href="#experience"
-                    onClick={()=>
-                    {setOpen(!open)
-                    }}>
-                        Experience
-                    </MobileMenuLinks>
-                    <MobileMenuLinks
-                    href="#projects"
-                    onClick={()=>
-                    {setOpen(!open)
-                    }}>
+                        href="#Projects"
+                        onClick={() => handleMenuItemClick("Projects")}
+                    >
                         Projects
                     </MobileMenuLinks>
                     <MobileMenuLinks
-                    href="#education"
-                    onClick={()=>
-                    {setOpen(!open)
-                    }}>
+                        href="#Education"
+                        onClick={() => handleMenuItemClick("Education")}
+                    >
                         Education
                     </MobileMenuLinks>
                     <GitHubButton 
@@ -230,7 +219,7 @@ const Navbar = () =>{
                         background: `${({ theme }) => theme.primary}`,color:"white",
                         width:"max-content",
                     }}
-                    href="/" target="_blank">
+                    href="https://github.com/kakarotv" target="_blank">
             Github Profile
           </GitHubButton>
                 </MobileMenu>

@@ -63,9 +63,9 @@ const Skill = styled.div`
   max-width: 450px;
   background-color: rgba(17, 25, 40, 0.83);
   border: 1px solid rgba(255, 255, 255, 0.125);
-  box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
+  box-shadow: rgba(29, 22, 242, 0.28) 0px 4px 24px;
   border-radius: 16px;
-  padding: 18px 36px;
+  padding: 12px 36px;
 
   @media (max-width: 768px) {
     max-width: 400px;
