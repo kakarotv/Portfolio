@@ -36,6 +36,7 @@ const HeroBg = styled.div`
   padding: 0 30px;
   -webkit-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
+  z-index:-1;
 
   @media (max-width: 960px) {
     justify-content: center;

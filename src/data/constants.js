@@ -1,3 +1,7 @@
+import img1 from "../images/LNMIIT_onlineforum.jpeg"
+import img2 from "../images/Railway.png"
+import img3 from "../images/speech.jpg"
+
 export const Bio = {
     name: "Vivek Nilkanthwar",
     roles: [
@@ -170,8 +174,7 @@ export const Bio = {
       date: "Mar 2023 - Jul 2023",
       description:
         "Designed and developed an online forum which serves as a platform for users to engage in discussions, share information and build a community around specific topics of interest. Created a visually appealing and intuitive interface using HTML, CSS and JavaScript that enhances user engagement and promotes seamless navigation.",
-      // image:
-      //   "",
+      image:img1,
       tags: [
         "Javascript",
         "React.js",
@@ -190,8 +193,7 @@ export const Bio = {
       date: "Nov 2021 - Dec 2021",
       description:
         "Designed a Railway ticket booking, reservation and cancellation system for users that wish to travel via the Indian Railways. Created frontend using HTML, CSS and Javascript, MySQL for the database designing and PHP in backend to establish connection between database and frontend, and to run various SQL queries.",
-      // image:
-      //   "",
+      image:img2,
       tags: ["HTML", "CSS", "Javascript", "PHP", "MySQL"],
       category: "web app",
       github: "https://github.com/kakarotv/Railway-Management-System",
@@ -212,8 +214,7 @@ export const Bio = {
       date: "Jan 2023 - Apr 2023",
       description:
         "Developed a project focused on Speech Emotion Recognition using ML techniques. Used several libraries including librosa for audio processing, TensorFlow, keras for the machine learning model and matplotlib and numpy for data visualization. Used Thingspeak to aggregate, visualize and analyze live data streams in the cloud.",
-      // image:
-      //   "",
+      image:img3,
       tags: [
         "Python",
         "ML",
