@@ -149,7 +149,7 @@ export const Bio = {
     },
     {
       id: 1,
-      img: "https://www.fiitjee.com/App_Themes/images/logo.png",
+      img: "https://dujozny86idgo.cloudfront.net/images/FIITJEE%20Logo.svg",
       school: "FIITJEE Junior College",
       date: "Apr 2019",
       grade: "96.60%",
@@ -158,7 +158,7 @@ export const Bio = {
     },
     {
       id: 2,
-      img: "https://www.fiitjee.com/App_Themes/images/logo.png",
+      img: "https://dujozny86idgo.cloudfront.net/images/FIITJEE%20Logo.svg",
       school: "FIITJEE WORLD SCHOOL",
       date: "Apr 2017 ",
       grade: "95%",

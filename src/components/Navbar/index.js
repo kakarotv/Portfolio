@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import styled from 'styled-components';
 import { Link as LinkR } from 'react-router-dom';
-import { SiBathasu } from "react-icons/si";
 import { FaBars } from "react-icons/fa";
+import logo from "../../images/logo.gif"
 
 const Nav = styled.div`
-background-color: ${({theme})=> theme.card_light};
-height: 80px;
+background-color: ${({theme})=> theme.primary};
+height: 70px;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -31,7 +31,7 @@ const NavContainer =styled.div`
 `;
 
 const NavLogo = styled(LinkR)`
-    width:80%;
+    width:200px;
     padding: 0 6px;
     display: flex;
     justify-self: flex-start;
@@ -62,7 +62,7 @@ const NavItems = styled.ul`
     display: flex;
     align-items: center;
     justify-content:center;
-    gap: 32px;
+    gap: 40px;
     padding: 0 6px;
     list-style: none;
 
@@ -72,13 +72,14 @@ const NavItems = styled.ul`
 `;
 
 const NavLink = styled.a`
+    font-size: 17px;
     color: ${({ theme }) => theme.text_primary};
-    font-weight: 500;
+    font-weight: 700;
     cursor: pointer;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.3s ease-in-out;
     text-decoration: none;
     :hover {
-      color: ${({ theme }) => theme.primary};
+      color: ${({ theme }) => theme.bgLight};
     }
 
     &.active {
@@ -99,22 +100,25 @@ const ButtonContainer = styled.div`
 `;
 
 const GitHubButton = styled.a`
-  border: 1.8px solid ${({ theme }) => theme.primary};
+  margin-top:17px;
+  border: 1.8px solid ${({ theme }) => theme.text_primary};
   justify-content: center;
   display: flex;
   align-items: center;
   height: 70%;
   border-radius: 20px;
-  color: ${({ theme }) => theme.primary};
+  color: ${({ theme }) => theme.text_primary};
   cursor: pointer;
   padding: 0 20px;
   font-weight: 500;
   text-decoration: none;
   font-size: 16px;
   transition: all 0.4s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     :hover {
-      background: ${({ theme }) => theme.primary};
-      color: ${({ theme }) => theme.white};     
+      background: ${({ theme }) => theme.black};
+      color: ${({ theme }) => theme.white}; 
+
     }
     @media screen and (max-width: 768px) { 
     font-size: 14px;
@@ -155,6 +159,11 @@ const MobileMenuLinks = styled(LinkR)`
         color:${({theme})=> theme.primary};
     }
 `;
+const Image = styled.img`
+  width: 60px;
+  height: 60px;
+  
+`;
 
 const Navbar = () =>{
     const [open,setOpen] = useState(false);
@@ -166,9 +175,7 @@ const Navbar = () =>{
     return (<Nav>
         <NavContainer>
             <NavLogo to='/'>
-                <a style={{ display: "flex", alignItems: "center", color: "white", marginBottom: '20;', cursor: 'pointer' }}>
-                <SiBathasu size="1.5rem" /> <Span>Portfolio</Span>
-                </a>
+            <Image src= {logo} />
             </NavLogo>
             <MobileIcon>
                 <FaBars 

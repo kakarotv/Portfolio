@@ -103,7 +103,7 @@ const Title = styled.div`
   font-weight: 700;
   font-size: 45px;
   color: ${({ theme }) => theme.text_primary};
-  line-height: 68px;
+  line-height: 60px;
 
   @media (max-width: 960px) {
     text-align: center;
