@@ -36,11 +36,14 @@ clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 98%, 0 100%);
 `;
 
 const NavbarWrapper = styled.div`
+
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 999;
+  border-bottom: 1px solid ${({ theme }) => theme.primary};
+
 `;
 
 function App() {

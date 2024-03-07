@@ -11,12 +11,14 @@ const HeroContainer=styled.div`
   justify-content:center;
   position:relative;
   padding: 80px 30px;
+  margin-top:30px;
 
   @media screen and(max-width:960px ){
     padding:66px 16px;
   }
   @media screen and (max-width:640px){
     padding: 32px 16px;
+    margin-top:30px;
   }
   z-index:1;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 95%, 0 100%);
@@ -92,13 +94,14 @@ const HeroRightContainer = styled.div`
 
   @media (max-width: 640px) {
     margin-bottom: 30px;
+    margin-top:30px;
   }
 `;
 
 const Title = styled.div`
   font-family:Garamond;
   font-weight: 700;
-  font-size: 50px;
+  font-size: 45px;
   color: ${({ theme }) => theme.text_primary};
   line-height: 68px;
 
@@ -138,8 +141,9 @@ const Span = styled.div`
 `;
 
 const SubTitle = styled.div`
-  font-size: 20px;
-  line-height: 32px;
+  font-size: 17px;
+  line-height: 25px;
+  margin-top:10px;
   margin-bottom: 42px;
   color: ${({ theme }) => theme.text_primary + 95};
 
@@ -159,10 +163,10 @@ const ResumeButton = styled.a`
   appearance: button;
   text-decoration: none;
 
-  width: 95%;
+  width: 40%;
   max-width: 300px;
   text-align: center;
-  padding: 16px 0;
+  padding: 12px 0;
 
   background: hsla(271, 100%, 50%, 1);
   background: linear-gradient(
@@ -183,7 +187,7 @@ const ResumeButton = styled.a`
   box-shadow: 20px 20px 60px #1f2634, -20px -20px 60px #1f2634;
   border-radius: 50px;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 18px;
 
      &:hover {
         transform: scale(1.05);
