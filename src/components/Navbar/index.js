@@ -5,7 +5,11 @@ import { FaBars } from "react-icons/fa";
 import logo from "../../images/logo.gif"
 
 const Nav = styled.div`
-background-color: ${({theme})=> theme.primary};
+background: linear-gradient(
+    225deg,
+    hsla(271, 100%, 50%, 1) 0%,
+    hsla(294, 100%, 50%, 1) 100%
+  );
 height: 70px;
 display: flex;
 justify-content: center;

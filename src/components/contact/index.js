@@ -131,7 +131,7 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    emailjs.sendForm('service_klgvy6q', 'template_4jghk4v', form.current, '0hkd4V3luF1vggwQx')
+    emailjs.sendForm(process.env.REACT_APP_SERVICEID, process.env.REACT_APP_TEMPLATEID, form.current, process.env.REACT_APP_KEY)
       .then((result) => {
         setOpen(true);
         form.current.reset();
