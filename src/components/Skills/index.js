@@ -28,7 +28,7 @@ const Wrapper = styled.div`
 
 const Title = styled.div`
 
-  font-size: 52px;
+  font-size: 45px;
   text-align: center;
   font-weight: 600;
   margin-top: 20px;
@@ -80,7 +80,7 @@ const Skill = styled.div`
 `;
 
 const SkillTitle = styled.div`
-  font-size: 28px;
+  font-size: 25px;
   font-weight: 600;
   margin-bottom: 20px;
   text-align: center;
