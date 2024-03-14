@@ -21,6 +21,7 @@ clip-path: polygon(0 0, 100% 0,100% 100%,100% 98%, 0 100%);
 
 `;
 const Wrapper = styled.div`
+  margin-top:50px;
   position: relative;
   display: flex;
   justify-content: space-between;

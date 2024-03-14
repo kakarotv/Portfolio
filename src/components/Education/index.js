@@ -15,6 +15,7 @@ z-index: 1;
 align-items: center;
 `;
 const Wrapper = styled.div`
+  margin-top:50px;
   position: relative;
   display: flex;
   justify-content: space-between;
